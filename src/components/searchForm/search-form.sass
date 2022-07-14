@@ -1,0 +1,22 @@
+.search-form
+    display: grid
+    grid-template-columns: 80% calc(20% - 10px)
+    grid-template-areas: "input select"
+    gap: 10px
+    width: 100%
+    height: 100%
+    &__text-input
+        grid-area: input
+        outline: none
+        border: none
+        padding-left: 1em
+        height: 40px
+        align-self: center
+        font-size: 1em
+    &__select
+        grid-area: select
+        outline: none
+        border: none
+        height: 40px
+        align-self: center
+        font-size: 1em
