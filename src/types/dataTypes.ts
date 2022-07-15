@@ -3,6 +3,7 @@ export enum DataConsts {
     CHANGE_STEP = "CHANGE_STEP",
     CHANGE_SORT = "CHANGE_SORT",
     TURN_PAGE = "TURN_PAGE",
+    CHANGE_SEARCH = "CHANGE_SEARCH"
 }
 
 export interface DataState {
@@ -10,6 +11,7 @@ export interface DataState {
     step: number,
     sort: string,
     page: number
+    search: string
 }
 
 export interface AddData {
@@ -32,4 +34,13 @@ export interface TurnPage {
     payload: number
 }
 
-export type DataAction = AddData | ChangeStep | ChangeSort | TurnPage
+export interface ChangeSearch {
+    type: DataConsts.CHANGE_SEARCH,
+    payload: string
+}
+
+export type DataAction = AddData | ChangeStep | ChangeSort | TurnPage | ChangeSearch
+
+export interface Data {
+    mutated: any[];
+  }

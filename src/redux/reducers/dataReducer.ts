@@ -5,7 +5,8 @@ const initState: DataState = {
     data: data,
     step: 10,
     sort: "",
-    page: 0
+    page: 0,
+    search: ""
 }
 
 export const dataReducer = (state:DataState = initState, {type, payload}: DataAction): DataState => {
@@ -18,6 +19,8 @@ export const dataReducer = (state:DataState = initState, {type, payload}: DataAc
             return {...state, sort: payload}
         case DataConsts.TURN_PAGE:
             return {...state, page: payload}
+        case DataConsts.CHANGE_SEARCH:
+            return {...state, search: payload}
         default:
             return state
     }
